@@ -1,0 +1,3 @@
+# Uso de  técnicas de Aprendizado de Máquina para identificação e previsão de eventos e patologias em idosos
+
+O objetivo principal do trabalho é utilizar técnicas de aprendizagem de máquina com a finalidade de  correlacionar os dados obtidos de uma bengala que incorpora um sistema eletrônico de expansão perceptiva e tentar prever o risco de quedas em idosos que utilizem a bengala e se possível identificar sintomas relacionados a anomalias específicas enquanto ainda estão seus estágios iniciais. A partir disso, pretende-se contribuir para o monitoramento e acompanhamento de sintomas associados a diversas patologias por meio do agrupamento e classificação dos sinais captados pela bengala.
