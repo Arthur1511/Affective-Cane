@@ -9,7 +9,7 @@ import hrvanalysis
 
 
 # Interpolação dos dados do Polar de segundo a segundo
-polar = pd.read_csv("Polar_Data.csv", sep=';', header=None)
+polar = pd.read_csv("dados/Polar_Data.csv", sep=';', header=None)
 
 for i in range(np.shape(polar)[0]):
     polar.iloc[i, 0] = 0
@@ -58,7 +58,7 @@ plt.show()
 # plt.show()
 
 # Interpolando data
-data = pd.read_csv("Dataframe.csv")
+data = pd.read_csv("dados/Dataframe.csv")
 colunas = data.columns
 x = np.arange(0, data.shape[0])
 xN = np.arange(0, data.shape[0], 100)
@@ -115,7 +115,7 @@ for coluna in data.columns:
     plt.xlabel("Hz")
     plt.ylabel("FFT")
     plt.title("FFT " + coluna + " interpolado")
-    plt.savefig(coluna + '_FFT.png')
+    plt.savefig('dados/' + coluna + '_FFT.png')
     plt.show()
 
 # FFT dataset bruto
@@ -136,7 +136,7 @@ for coluna in data.columns:
     plt.xlabel("Hz")
     plt.ylabel("FFT")
     plt.title("FFT " + coluna)
-    plt.savefig(coluna + '_Bruto_FFT.png')
+    plt.savefig('dados/' + coluna + '_Bruto_FFT.png')
     plt.show()
 
 # fft do polar

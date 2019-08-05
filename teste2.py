@@ -6,7 +6,7 @@ import transformations
 
 plt.style.use('ggplot')  # if you are an R user and want to feel at home
 
-caneLog = pd.read_csv('Dataframe.csv')
+caneLog = pd.read_csv('dados/Dataframe.csv')
 
 print(caneLog.head())
 

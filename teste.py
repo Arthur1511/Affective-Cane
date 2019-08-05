@@ -1,11 +1,11 @@
 import pandas as pd
 from scipy.spatial.transform import Rotation as R
 
-accel = pd.read_csv('Accelerometer_Amab.csv', sep='\t', header=None).drop(labels=[0, 1, 2], axis=1)
+accel = pd.read_csv('dados/Accelerometer_Amab.csv', sep='\t', header=None).drop(labels=[0, 1, 2], axis=1)
 print(accel.head())
-accel.to_csv('accel.csv', header=None, index=None)
+accel.to_csv('dados/accel.csv', header=None, index=None)
 
-f = open('accel.csv')
+f = open('dados/accel.csv')
 data = f.read()
 f.close()
 data = data.replace('[', '')
@@ -31,9 +31,9 @@ for linhas in data:
 
 accelerometer = pd.DataFrame(accel, columns=['angulo', 'x', 'y', 'z', 'rX', 'rY', 'rZ'])
 
-accelerometer.to_csv('accel2.csv')
+accelerometer.to_csv('dados/accel2.csv')
 
-fsr = pd.read_csv('FSR_Data', sep='\t').drop(columns=['Id', 'Day', 'Unnamed: 2', 'Unnamed: 4', 'Value'])
+fsr = pd.read_csv('dados/FSR_Data', sep='\t').drop(columns=['Id', 'Day', 'Unnamed: 2', 'Unnamed: 4', 'Value'])
 fsr = fsr.rename({'Time': "fsr"}, axis=1)
 
 print(accelerometer.describe())
@@ -42,4 +42,4 @@ print(fsr.describe())
 dataframe = pd.concat([fsr, accelerometer], axis=1)
 print(dataframe.describe())
 
-dataframe.to_csv('Dataframe.csv', index=None)
+dataframe.to_csv('dados/Dataframe.csv', index=None)

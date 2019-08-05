@@ -7,11 +7,11 @@ from scipy import interpolate, fft
 nomes = ['Amab', 'Raf', 'Die']
 
 for nome in nomes:
-    accel = pd.read_csv('Accelerometer_'+nome+'.csv', sep='\t', header=None).drop(labels=[0, 1, 2], axis=1)
+    accel = pd.read_csv('dados/Accelerometer_'+nome+'.csv', sep='\t', header=None).drop(labels=[0, 1, 2], axis=1)
     print(accel.head())
-    accel.to_csv('accel.csv', header=None, index=None)
+    accel.to_csv('dados/accel.csv', header=None, index=None)
 
-    f = open('accel.csv')
+    f = open('dados/accel.csv')
     data = f.read()
     f.close()
     data = data.replace('[', '')
@@ -37,11 +37,11 @@ for nome in nomes:
 
     accelerometer = pd.DataFrame(accel, columns=['angulo', 'x', 'y', 'z', 'rX', 'rY', 'rZ'])
 
-    accelerometer.to_csv('accel_'+nome+'.csv', index=False)
+    accelerometer.to_csv('dados/accel_'+nome+'.csv', index=False)
 
 # Interpolando data
 for nome in nomes:
-    data = pd.read_csv('accel_' + nome + '.csv')
+    data = pd.read_csv('dados/accel_' + nome + '.csv')
     colunas = ['rX', 'rY', 'rZ']
     x = np.arange(0, data.shape[0])
     # xN = np.arange(0, data.shape[0], 100)
@@ -61,6 +61,6 @@ for nome in nomes:
         plt.xlabel("Tempo (s)")
         plt.ylabel("Graus")
         plt.grid(True)
-        plt.savefig(coluna + '_' + nome + '.png')
+        plt.savefig('dados/' + coluna + '_' + nome + '.png')
         plt.show()
 
